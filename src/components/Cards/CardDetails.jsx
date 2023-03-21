@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import styles from "./CardsDetails.module.scss";
 
 const CardDetails = () => {
   let { id } = useParams();
@@ -16,9 +17,9 @@ const CardDetails = () => {
   }, [api]);
 
   return (
-    <div className="container d-flex justify-content-center">
+    <div className="container d-flex justify-content-center bg-black">
       <div className="d-flex flex-column gap-3">
-        <h1 className="text-center">{name}</h1>
+        <h1 className="text-center text-light">{name}</h1>
         <img src={image} alt="" className="img-fluid" />
         {(() => {
           if (status === "Dead") {
@@ -30,23 +31,23 @@ const CardDetails = () => {
           }
         })()}
         <div className="content">
-          <div className="">
+          <div className="text-light">
             <span className="fw-bold">Gender :</span>
             {gender}
           </div>
-          <div className="">
+          <div className="text-light">
             <span className="fw-bold">Species :</span>
             {species}
           </div>
-          <div className="">
+          <div className="text-light">
             <span className="fw-bold">Type :</span>
             {type === "" ? "Unknown" : type}
           </div>
-          <div className="">
+          <div className="text-light">
             <span className="fw-bold">Location :</span>
             {location?.name}
           </div>
-          <div className="">
+          <div className="text-light">
             <span className="fw-bold">Origin :</span>
             {origin?.name}
           </div>

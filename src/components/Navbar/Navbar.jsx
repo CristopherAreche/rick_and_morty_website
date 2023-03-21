@@ -4,9 +4,9 @@ import "../../App.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <nav className="navbar navbar-expand-lg navbar-light bg-black mb-4">
       <div className="container">
-        <Link to="/" className="fs-3 ubuntu navbar-brand">
+        <Link to="/" className="text-light fs-3 ubuntu navbar-brand">
           Rick & Morty <span className="text-primary">Wiki</span>
         </Link>
         <button
@@ -35,14 +35,18 @@ const Navbar = () => {
           className="collapse navbar-collapse justify-content-end"
           id="navbarNavAltMarkup"
         >
-          <div className="navbar-nav fs-5">
-            <NavLink activeClassName="active" to="/" className="nav-link">
+          <div className="navbar-nav fs-6">
+            <NavLink
+              activeClassName="active"
+              to="/"
+              className="nav-link text-light"
+            >
               Characters
             </NavLink>
-            <NavLink to="/episodes" className="nav-link">
+            <NavLink to="/episodes" className="nav-link text-light">
               Episode
             </NavLink>
-            <NavLink to="/location" className="nav-link">
+            <NavLink to="/location" className="nav-link text-light">
               Location
             </NavLink>
           </div>

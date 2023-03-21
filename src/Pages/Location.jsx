@@ -23,23 +23,25 @@ const Location = () => {
     })();
   }, [api]);
   return (
-    <div className="container">
+    <div className="container bg-black">
       <div className="row mb-4">
-        <h1 className="text-center mb-4">
+        <h1 className="text-center mb-4 text-light">
           Location :
           <span className="text-primary">
             {" "}
             {name === "" ? "Unknown" : name}
           </span>
         </h1>
-        <h5 className="text-center">
+        <h5 className="text-center text-light">
           Dimension : {dimension === "" ? "Unknown" : dimension}
         </h5>
-        <h6 className="text-center">Type : {type === "" ? "Unknown" : type}</h6>
+        <h6 className="text-center text-light">
+          Type : {type === "" ? "Unknown" : type}
+        </h6>
       </div>
       <div className="row">
         <div className="col-lg-3 col-12">
-          <div className="text-center mb-4">Pick Location</div>
+          <div className="text-center mb-4 text-light">Pick Location</div>
           <InputGroup setID={setID} name="Location" total={126} />
         </div>
         <div className="col-lg-8 col-12">

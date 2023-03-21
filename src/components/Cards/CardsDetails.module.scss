@@ -1,0 +1,12 @@
+$radius: 10px;
+
+.container {
+  background-color: aqua;
+}
+.cardContainer {
+  border: 2px solid #f6f7f8;
+  border-radius: $radius;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  background-color: aqua;
+}

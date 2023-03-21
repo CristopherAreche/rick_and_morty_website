@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Cards.module.scss";
 import { Link } from "react-router-dom";
+import * as Icon from "react-bootstrap-icons";
 
 const Cards = ({ results, page }) => {
   let display;
@@ -57,9 +58,6 @@ const Cards = ({ results, page }) => {
               );
             }
           })()}
-          {/* <div className="">
-            <i class="bi bi-heart-fill"></i>
-          </div> */}
         </Link>
       );
     });

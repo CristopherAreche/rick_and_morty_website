@@ -23,22 +23,22 @@ const Episodes = () => {
     })();
   }, [api]);
   return (
-    <div className="container">
+    <div className="container bg-black">
       <div className="row mb-4">
-        <h1 className="text-center mb-4">
+        <h1 className="text-center mb-4 text-light">
           Episode :
           <span className="text-primary">
             {" "}
             {name === "" ? "Unknown" : name}
           </span>
         </h1>
-        <h5 className="text-center">
+        <h5 className="text-center text-light">
           Air Date {air_date === "" ? "Unknown" : air_date}
         </h5>
       </div>
       <div className="row">
         <div className="col-lg-3 col-12">
-          <div className="text-center mb-4">Pick Episodes</div>
+          <div className="text-center mb-4 text-light">Pick Episodes</div>
           <InputGroup setID={setID} name="Episode" total={51} />
         </div>
         <div className="col-lg-8 col-12">

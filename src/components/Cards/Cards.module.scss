@@ -1,8 +1,10 @@
 $radius: 10px;
 
 .cards {
-  border: 2px solid #0b5ed7;
+  border: 2px solid #f6f7f8;
   border-radius: $radius;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
 }
 
 .img {

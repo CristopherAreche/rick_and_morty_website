@@ -66,8 +66,8 @@ const Home = () => {
   }, [api]);
 
   return (
-    <div className="App">
-      <h1 className="text-center mb-4">Characters</h1>
+    <div className="App bg-black">
+      <h1 className="text-center mb-4 text-light">Characters</h1>
       <Search setPageNumber={setPageNumber} setSearch={setSearch} />
       <div className="container">
         <div className="row">
