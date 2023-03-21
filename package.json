@@ -2,7 +2,7 @@
   "name": "rick_and_morty_2.0",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://CristopherAreche.github.io/rick_and_morty_2.0",
+  "homepage": "https://cristopherareche.github.io/Rick-Morty-Website/",
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "@reduxjs/toolkit": "^1.9.3",
