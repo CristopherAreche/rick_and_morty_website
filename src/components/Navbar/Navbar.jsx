@@ -6,7 +6,10 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-black mb-4">
       <div className="container">
-        <Link to="/" className="text-light fs-3 ubuntu navbar-brand">
+        <Link
+          to="/rick_and_morty_website"
+          className="text-light fs-3 ubuntu navbar-brand"
+        >
           Rick & Morty <span className="text-primary">Wiki</span>
         </Link>
         <button
@@ -38,15 +41,21 @@ const Navbar = () => {
           <div className="navbar-nav fs-6">
             <NavLink
               activeClassName="active"
-              to="/"
+              to="/rick_and_morty_website"
               className="nav-link text-light"
             >
               Characters
             </NavLink>
-            <NavLink to="/episodes" className="nav-link text-light">
+            <NavLink
+              to="rick_and_morty_website/episodes"
+              className="nav-link text-light"
+            >
               Episode
             </NavLink>
-            <NavLink to="/location" className="nav-link text-light">
+            <NavLink
+              to="rick_and_morty_website/location"
+              className="nav-link text-light"
+            >
               Location
             </NavLink>
           </div>

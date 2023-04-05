@@ -18,13 +18,19 @@ function App() {
         <Navbar />
       </div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<CardDetails />} />
+        <Route path="/rick_and_morty_website" element={<Home />} />
+        <Route path="/rick_and_morty_website/:id" element={<CardDetails />} />
 
-        <Route path="/episodes" element={<Episodes />} />
-        <Route path="/episodes/:id" element={<CardDetails />} />
-        <Route path="/location" element={<Location />} />
-        <Route path="/location/:id" element={<CardDetails />} />
+        <Route path="/rick_and_morty_website/episodes" element={<Episodes />} />
+        <Route
+          path="/rick_and_morty_website/episodes/:id"
+          element={<CardDetails />}
+        />
+        <Route path="/rick_and_morty_website/location" element={<Location />} />
+        <Route
+          path="/rick_and_morty_website/location/:id"
+          element={<CardDetails />}
+        />
       </Routes>
     </Router>
   );
