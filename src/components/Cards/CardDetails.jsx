@@ -17,8 +17,8 @@ const CardDetails = () => {
   }, [api]);
 
   return (
-    <div className="container d-flex justify-content-center bg-black">
-      <div className="d-flex flex-column gap-3">
+    <div className={` d-flex justify-content-center bg-black`}>
+      <div className={`${styles.container} d-flex flex-column gap-3`}>
         <h1 className="text-center text-light">{name}</h1>
         <img src={image} alt="" className="img-fluid" />
         {(() => {

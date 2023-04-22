@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Cards.module.scss";
 import { Link } from "react-router-dom";
-import * as Icon from "react-bootstrap-icons";
 
 const Cards = ({ results, page }) => {
   let display;
@@ -14,7 +13,7 @@ const Cards = ({ results, page }) => {
         //postion relative is for the parent containers
         <Link
           style={{ textDecoration: "none" }}
-          to={`/rick_and_morty_website/${page}${id}`}
+          to={`/rick_and_morty_website${page}${id}`}
           key={id}
           className="col-lg-4 col-md-6 col-12 mb-4 position-relative text-dark"
         >
