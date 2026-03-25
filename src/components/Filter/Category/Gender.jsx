@@ -1,7 +1,7 @@
 import React from "react";
 import FilterBTN from "../FilterBTN";
 
-const Gender = ({ setPageNumber, setGender }) => {
+const Gender = ({ selectedGender, setPageNumber, setGender }) => {
   let genders = ["female", "male", "genderless", "unknown"];
   return (
     <div className="accordion-item">
@@ -28,7 +28,8 @@ const Gender = ({ setPageNumber, setGender }) => {
             <FilterBTN
               task={setGender}
               setPageNumber={setPageNumber}
-              key={index}
+              value={selectedGender}
+              key={items}
               name="gender"
               index={index}
               items={items}

@@ -3,29 +3,52 @@ import Gender from "./Category/Gender";
 import Species from "./Category/Species";
 import Status from "./Category/Status";
 
-const Filter = ({ setStatus, setPageNumber, setGender, setSpecies }) => {
+const Filter = ({
+  gender,
+  setStatus,
+  setPageNumber,
+  setGender,
+  setSpecies,
+  species,
+  status,
+}) => {
   let clear = () => {
     setStatus("");
-    setPageNumber("");
     setGender("");
     setSpecies("");
-    //thi will refresh the page when the filters are clear
-    window.location.reload(false);
+    setPageNumber(1);
   };
   return (
-    <div className=" col-lg-3 col-12 mb-5">
-      <div className="text-center fw-bold fs-4 mb-2 text-light">Filter</div>
-      <div
-        onClick={clear}
-        style={{ cursor: "pointer" }}
-        className="text-center text-primary text-decoration-underline mb-4"
-      >
-        Clear Filters
+    <div>
+      <div className="filterToolbar">
+        <div>
+          <span className="panel-kicker">Refine results</span>
+          <h2 className="panel-title">Filters</h2>
+          <p className="panel-subtitle">
+            Mix status, species, and gender to focus the cast without leaving
+            the current page.
+          </p>
+        </div>
+        <button type="button" onClick={clear} className="filterClear">
+          Reset
+        </button>
       </div>
       <div className="accordion" id="accordionExample">
-        <Status setStatus={setStatus} setPageNumber={setPageNumber} />
-        <Species setSpecies={setSpecies} setPageNumber={setPageNumber} />
-        <Gender setGender={setGender} setPageNumber={setPageNumber} />
+        <Status
+          selectedStatus={status}
+          setStatus={setStatus}
+          setPageNumber={setPageNumber}
+        />
+        <Species
+          selectedSpecies={species}
+          setSpecies={setSpecies}
+          setPageNumber={setPageNumber}
+        />
+        <Gender
+          selectedGender={gender}
+          setGender={setGender}
+          setPageNumber={setPageNumber}
+        />
       </div>
     </div>
   );

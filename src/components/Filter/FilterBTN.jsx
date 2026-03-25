@@ -1,34 +1,23 @@
 import React from "react";
 
-const FilterBTN = ({ name, index, items, task, setPageNumber }) => {
+const FilterBTN = ({ name, index, items, task, setPageNumber, value }) => {
   return (
-    <>
-      {/* esto es para eliminar los botones de seleccion que vienen por default en la catageroia de filtros */}
-      <style jsx>{`
-        .x:checked + label {
-          background-color: #0b5ed7;
-          color: white;
-        }
-        input[type="radio"] {
-          display: none;
-        }
-      `}</style>
-      <div className="form-check">
-        <input
-          onClick={() => {
-            setPageNumber(1);
-            task(items);
-          }}
-          className="form-check-input x"
-          type="radio"
-          name={name}
-          id={`${name}-${index}`}
-        />
-        <label className="btn btn-outline-primary" for={`${name}-${index}`}>
-          {items}
-        </label>
-      </div>
-    </>
+    <div className="form-check">
+      <input
+        checked={value === items}
+        onChange={() => {
+          setPageNumber(1);
+          task(items);
+        }}
+        className="filter-option-input"
+        type="radio"
+        name={name}
+        id={`${name}-${index}`}
+      />
+      <label className="filter-option-label" htmlFor={`${name}-${index}`}>
+        {items}
+      </label>
+    </div>
   );
 };
 

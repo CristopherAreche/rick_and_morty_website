@@ -3,66 +3,54 @@ import styles from "./Cards.module.scss";
 import { Link } from "react-router-dom";
 
 const Cards = ({ results, page }) => {
-  let display;
+  const getBadgeClassName = (status) => {
+    if (status === "Alive") {
+      return styles.badgeAlive;
+    }
 
-  if (results) {
-    display = results.map((result) => {
-      //destructure all the information needed from results
-      let { id, name, image, location, status } = result;
-      return (
-        //postion relative is for the parent containers
-        <Link
-          style={{ textDecoration: "none" }}
-          to={`/rick_and_morty_website${page}${id}`}
-          key={id}
-          className="col-lg-4 col-md-6 col-12 mb-4 position-relative text-dark"
-        >
-          <div
-            className={`${styles.cards} d-flex flex-column justify-content-center`}
-          >
-            <img src={image} alt="" className={`${styles.img} img-fluid`} />
-            <div style={{ padding: "10px" }} className="content">
-              <div className="fs-4 fw-bold mb-4">{name}</div>
-              <div className="">
-                <div className="fs-6">Last location</div>
-                <div className="fs-5">{location.name}</div>
-              </div>
+    if (status === "Dead") {
+      return styles.badgeDead;
+    }
+
+    return styles.badgeUnknown;
+  };
+
+  if (!results?.length) {
+    return null;
+  }
+
+  let display = results.map((result) => {
+    //destructure all the information needed from results
+    let { id, name, image, location, status } = result;
+    return (
+      //postion relative is for the parent containers
+      <Link
+        style={{ textDecoration: "none" }}
+        to={`${page}${id}`}
+        key={id}
+        className={`col-xl-4 col-md-6 col-12 ${styles.cardLink}`}
+      >
+        <article className={styles.card}>
+          <div className={styles.imageWrap}>
+            <img src={image} alt={name} className={styles.img} />
+          </div>
+          <div className={styles.body}>
+            <div className={styles.header}>
+              <h3 className={styles.name}>{name}</h3>
+              <span className={`${styles.badge} ${getBadgeClassName(status)}`}>
+                {status}
+              </span>
+            </div>
+            <div>
+              <span className={styles.metaLabel}>Last known location</span>
+              <p className={styles.metaValue}>{location?.name ?? "Unknown"}</p>
             </div>
           </div>
-          {/* position absolute is for the child containers */}
-          {(() => {
-            if (status === "Dead") {
-              return (
-                <div
-                  className={`${styles.badge} badge bg-danger position-absolute`}
-                >
-                  {status}
-                </div>
-              );
-            } else if (status === "Alive") {
-              return (
-                <div
-                  className={`${styles.badge} badge bg-success position-absolute`}
-                >
-                  {status}
-                </div>
-              );
-            } else {
-              return (
-                <div
-                  className={`${styles.badge} badge bg-secondary position-absolute`}
-                >
-                  {status}
-                </div>
-              );
-            }
-          })()}
-        </Link>
-      );
-    });
-  } else {
-    display = "No Characters Found :/";
-  }
+        </article>
+      </Link>
+    );
+  });
+
   return <>{display}</>;
 };
 

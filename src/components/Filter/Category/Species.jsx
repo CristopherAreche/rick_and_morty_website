@@ -1,7 +1,7 @@
 import React from "react";
 import FilterBTN from "../FilterBTN";
 
-const Species = ({ setPageNumber, setSpecies }) => {
+const Species = ({ selectedSpecies, setPageNumber, setSpecies }) => {
   let species = [
     "Human",
     "Alien",
@@ -40,7 +40,8 @@ const Species = ({ setPageNumber, setSpecies }) => {
             <FilterBTN
               task={setSpecies}
               setPageNumber={setPageNumber}
-              key={index}
+              value={selectedSpecies}
+              key={items}
               name="species"
               index={index}
               items={items}
